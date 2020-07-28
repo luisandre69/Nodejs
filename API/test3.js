@@ -1,4 +1,6 @@
 const request = require('request');
+var jsonpretty = require('jsonpretty');
+
 setInterval(function () {
     request('http://test3.infra.getlenses.co.uk', {
         json: true
@@ -6,6 +8,6 @@ setInterval(function () {
         if (err) {
             return console.log(err);
         }
-        console.log(body);
+        console.log(jsonpretty(body));
     });
 }, 30000);
